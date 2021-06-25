@@ -1,0 +1,48 @@
+﻿<Window x:Class="CatalogoDeSeries.EditarCap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatalogoDeSeries"
+        mc:Ignorable="d"
+        Title="Editar Capitulo" Height="555.242" Width="800" Background="Gray">
+    <StackPanel x:Name="Contenedor">
+        <StackPanel.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Margin" Value="10,5,0,0"></Setter>
+                <Setter Property="FontSize" Value="15"></Setter>
+                <Setter Property="Foreground" Value="Aqua"></Setter>
+                <Setter Property="FontFamily" Value="/CatalogoDeSeries;component/#Biko"></Setter>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Margin" Value="15,0,15,0"></Setter>
+                <Setter Property="BorderBrush" Value="Aqua"></Setter>
+                <Setter Property="BorderThickness" Value="0,0,2,2"></Setter>
+                <Setter Property="FontFamily" Value="/CatalogoDeSeries;component/#Biko"></Setter>
+            </Style>
+        </StackPanel.Resources>
+        <Label Content="Nombre en Español:"></Label>
+        <TextBox Text="{Binding Español}"></TextBox>
+        <Label Content="Nombre Original:"></Label>
+        <TextBox Text="{Binding Ingles}"></TextBox>
+        <Label Content="Numero de Episodio"></Label>
+        <TextBox Text="{Binding NumCapitulo}"></TextBox>
+        <Label Content="Temporada:"></Label>
+        <TextBox Text="{Binding Temporada}"></TextBox>
+        <Label Content="Descripcion"></Label>
+        <TextBox Height="44" Text="{Binding Descripcion}"></TextBox>
+        <Label Content="Portada"></Label>
+        <GroupBox Height="149" Margin="15,0"   BorderThickness="0,0,0,1" BorderBrush="Black" Background="#FF252525">
+            <GroupBox.Header >
+                <Decorator></Decorator>
+            </GroupBox.Header>
+
+            <Image  Margin="0,0,0,-2" Height="100" Source="{Binding Ruta}" MouseDown="imgCapitulo_MouseDown" />
+        </GroupBox>
+        <TextBox x:Name="txtruta"  Foreground="Black" Background="Transparent" Text="{Binding Ruta}" ></TextBox>
+        <Border CornerRadius="10"  ClipToBounds="True" BorderBrush="AntiqueWhite" HorizontalAlignment="Center" BorderThickness="1" Background="White" Margin="0,0,10,0">
+
+            <Button Content="Editar" Height="50" x:Name="editar" FontFamily="/CatalogoDeSeries;component/#Biko" Width="200" Background="Transparent" FontSize="25" Click="editar_Click" BorderThickness="0" ClipToBounds="True" ></Button>
+        </Border>
+    </StackPanel>
+</Window>

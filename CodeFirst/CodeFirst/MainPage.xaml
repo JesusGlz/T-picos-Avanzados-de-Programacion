@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CodeFirst.ViewModels"
+             x:Class="CodeFirst.MainPage" NavigationPage.HasNavigationBar="False"
+             x:Name="visual">
+    <ContentPage.BindingContext>
+        <vm:AgendarViewNodel></vm:AgendarViewNodel>
+    </ContentPage.BindingContext>
+    
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollView Grid.Row="0"  >
+            <StackLayout>
+            
+        <Frame BackgroundColor="#ffc629" Padding="10,10,10,-45" Margin="0,0,0,40" CornerRadius="0" HasShadow="True">
+            <Image Source="marabuntalogocurvas2negro2.png" HeightRequest="120" ></Image>
+
+        </Frame>
+        <Label Text="Anticipa tu asistencia con una cita." FontSize="Title" TextColor="Black" Padding="50,10,30,10"/>
+                <Label Text="Por disposición del gobierno esta sera nuestra forma de operar dentro de este emergencia sanitaria" FontSize="16" Padding="30,0,30,0"/>
+        <ListView ItemsSource="{Binding Agenda}"  Margin="10" BackgroundColor="White" HeightRequest="50">
+            <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell  >
+                                <StackLayout Margin="15,0,0,0">
+                                    <Label Text="{Binding Nombre}" FontSize="20" Margin="0,0,0,-10"></Label>
+                                    <Label Text="{Binding Asunto}" FontSize="Subtitle"></Label>
+                                </StackLayout>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Borrar" Command="{Binding Source={x:Reference visual}, Path=BindingContext.EliminarCommand}"  CommandParameter="{Binding .}"></MenuItem>
+                                    <MenuItem Text="Editar" Command="{Binding Source={x:Reference visual}, Path=BindingContext.EditarCommand}"  CommandParameter="{Binding .}"></MenuItem>
+                                </ViewCell.ContextActions>
+                            </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            </StackLayout>
+        </ScrollView>
+
+
+
+        <Button Grid.Row="0"  HorizontalOptions="Center" VerticalOptions="End" CornerRadius="100" Command="{Binding NuevoCommand}"  Text="+" Margin="20" BackgroundColor="#ffc629" FontSize="45"></Button>
+        
+    </Grid>
+   
+</ContentPage>

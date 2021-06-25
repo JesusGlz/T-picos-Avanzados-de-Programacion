@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Gato"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Label DockPanel.Dock="Top">El Gato</Label>
+        <UniformGrid Columns="3" Rows="3" DockPanel.Dock="Bottom" Margin="150,70,150,50">
+            <Button Height=""></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+            <Button></Button>
+        </UniformGrid>
+    </DockPanel>
 </Window>

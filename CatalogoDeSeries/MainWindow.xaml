@@ -1,0 +1,63 @@
+﻿<Window x:Class="CatalogoDeSeries.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatalogoDeSeries"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="572.712" Width="964.614" >
+    <Window.Background>
+        <ImageBrush ImageSource="mortyy.jpg" Opacity=".4"></ImageBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition ></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="449*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Guia de episodios sobre Rick And Mory" Foreground="Aqua" FontWeight="Bold" FontFamily="/CatalogoDeSeries;component/#Biko" FontSize="25" HorizontalAlignment="Center" Width="486"></Label>
+        <ListBox Grid.Row="1" x:Name="lstCapitulos" Margin="20" Padding="10" Background="Transparent" BorderBrush="Aqua" >
+
+
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Header="Editar" CommandParameter="{Binding }" Click="MenuItem_Click"></MenuItem>
+                                <MenuItem Header="Eliminar" CommandParameter="{Binding }" x:Name="eliminar" Click="eliminar_Click"></MenuItem>
+                            </ContextMenu>
+                        </Grid.ContextMenu>
+                        <TextBlock  Grid.Row="0" FontFamily="/CatalogoDeSeries;component/#Biko" Text="{Binding Español}" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua" >
+
+                        </TextBlock>
+                        <Expander  HorizontalAlignment="Right" Margin="10">
+                            <Border Background="Gray"  CornerRadius="10" ClipToBounds="True">
+                                <local:UCCapitulo    Grid.Row="1" Background="Transparent" ClipToBounds="True" HorizontalAlignment="Center" Height="400"></local:UCCapitulo>
+                            </Border>
+                        </Expander>
+
+                    </Grid>
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Border CornerRadius="10" Grid.Row="0" Grid.Column="2" Margin="5" Width="40" ClipToBounds="True" BorderBrush="AntiqueWhite" BorderThickness="1" Background="White" HorizontalAlignment="Right">
+
+            <Button Content="+" FontFamily="Arial" HorizontalAlignment="Right" Background="Transparent" Width="40" FontSize="25" BorderThickness="0" ClipToBounds="True" Click="Button_Click" />
+        </Border>
+    </Grid>
+</Window>

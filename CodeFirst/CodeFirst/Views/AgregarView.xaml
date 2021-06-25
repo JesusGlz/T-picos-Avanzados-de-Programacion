@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodeFirst.Views.AgregarView"
+             NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Gray"  >
+            <Frame Padding="-10" CornerRadius="10" Margin="10">
+                <StackLayout BindingContext="{Binding Cita}" Margin="10" Padding="10" HeightRequest="500" BackgroundColor="#ffc629"  >
+                    <StackLayout.Resources>
+                        <ResourceDictionary>
+                            <Style TargetType="Label" >
+                                <Setter Property="TextColor" Value="Black"></Setter>
+                            </Style>
+                        </ResourceDictionary>
+                    </StackLayout.Resources>
+                    <Label Text="Nueva cita" FontSize="30" Margin="0,10,0,0"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Nombre" FontSize="Title"></Label>
+                    <Entry Keyboard="Text" Text="{Binding Nombre}" BackgroundColor="#ffc629" Placeholder="Juan...">
+                    </Entry>
+                    <Label Text="Asunto de la cita" FontSize="Title"></Label>
+                    <Entry Keyboard="Text" Text="{Binding Asunto}" Placeholder="Ejercitarce..."></Entry>
+                    <Label Text="Fecha de la cita" FontSize="Title"></Label>
+                    <DatePicker Date="{Binding Fecha}" MinimumDate="1/1/2021" BackgroundColor="Transparent"></DatePicker>
+
+
+                </StackLayout>
+            </Frame>
+            
+            <Button Text="Agregar" Command="{Binding GuardarCommand}" Margin="10" CornerRadius="10" BorderColor="#ffc629" Background="#ffc629"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
