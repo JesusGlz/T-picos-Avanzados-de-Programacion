@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mascotas.Views.Adopta"
+             Title="Adopta" BackgroundColor="LightBlue" IconImageSource="pawprint.png">
+    <ContentPage.Content>
+        <Frame Margin="10" BackgroundColor="SlateGray">
+            <StackLayout>
+                <Label TextColor="White"  Text="Mascotas saludables, personas felices, 
+                       un mundo mejor." FontSize="30" HorizontalTextAlignment="Center"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label TextColor="White" FontSize="20" HorizontalTextAlignment="Center" Text="Cuando adoptas una mascota, cosas maravillosas pasan en tu vida. Si estás pensando tener un nuevo integrante en tu familia nosotros podemos ayudarte."></Label>
+
+
+                <Frame CornerRadius="10" Padding="0" Margin="0,20,0,0" BackgroundColor="#fdbd59" HeightRequest="40" WidthRequest="240" HorizontalOptions="Center" >
+                    <Label Text="CÓMO ADOPTAR" FontSize="25"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                </Frame>
+                <Label FontSize="20" TextColor="White" Text="1.- Descubre los beneficios de una adopción.
+                       
+
+                           2.- Conoce al nuevo integrante de tu familia.
+
+
+                       
+                            3.- Llena el formato de adopción.
+
+
+                                 4.- Entrevístate con un representante.
+
+
+                       5.- Evaluación domiciliaria.
+
+
+                       6.- Prepara lo necesario para recibir a tu nuevo amigo (kit de adopción)."></Label>
+            </StackLayout>
+        </Frame>
+       
+    </ContentPage.Content>
+</ContentPage>

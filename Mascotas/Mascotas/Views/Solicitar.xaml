@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mascotas.Views.Solicitar"
+             Title="Tramite" BackgroundColor="LightBlue" IconImageSource="contract.png" xmlns:vm="clr-namespace:Mascotas.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:DatosViewModels></vm:DatosViewModels>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Frame CornerRadius="10" BackgroundColor="SlateGray" Margin="10">
+            
+        
+        <StackLayout>
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="White"></Setter>
+                        <Setter Property="FontSize" Value="20"></Setter>
+                    </Style>
+                        <Style TargetType="Entry">
+                            <Setter Property="FontSize" Value="15"></Setter>
+                            <Setter Property="TextColor" Value="White"></Setter>
+                        </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Label Text="Tramita tu adopcion"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" FontSize="Large"/>
+            <Label Text="Nombre"></Label>
+            <Entry Text="{Binding Nombre}"></Entry>
+            <Label Text="Telefono" ></Label>
+            <Entry Keyboard="Telephone"></Entry>
+            <Label Text="¿Porque te gustaria adoptar?"></Label>
+            <Entry ></Entry>
+            <Label Text="Correo Electronico"></Label>
+                <Entry Keyboard="Email" Text="{Binding Email}"></Entry>
+                <Label Text="Raza esperada"></Label>
+                <Picker  x:Name="pickerr">
+                </Picker>
+                <Frame Padding="0" CornerRadius="10" Margin="35">
+                    <Button Text="Enviar" CornerRadius="10" BorderColor="White" BorderWidth="2" BackgroundColor="#fdbd59" FontSize="20" TextColor="Black" Command="{Binding SubmitCommand}"> </Button>
+                </Frame>
+                <Label Text="{Binding Error}" TextColor="Red"></Label>
+        </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
